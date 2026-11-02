@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IFMU — Investitsiya va loyihalar platformasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b16;--bg2:#0c1324;--surface:#101a30;--text:#f3efe6;--muted:#a3adc2;--gold:#c9a24b;--gold2:#e8cf8e;--line:#1f2b47;--on:#1a1305;--shadow:0 20px 50px rgba(0,0,0,.35);
+--serif:"Playfair Display",Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#faf7f0;--bg2:#f1ecdf;--surface:#fff;--text:#121a2e;--muted:#5d6580;--gold:#9c7a24;--gold2:#7d5f14;--line:#e3dccb;--on:#fff;--shadow:0 16px 40px rgba(60,45,10,.12)}}
+:root[data-theme="light"]{--bg:#faf7f0;--bg2:#f1ecdf;--surface:#fff;--text:#121a2e;--muted:#5d6580;--gold:#9c7a24;--gold2:#7d5f14;--line:#e3dccb;--on:#fff;--shadow:0 16px 40px rgba(60,45,10,.12)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.mark{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;color:var(--gold);font-size:18px}
+.logo b{font-family:var(--serif);font-size:22px;letter-spacing:3px}
+nav{display:flex;gap:2px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;padding:7px 11px;border-radius:6px;letter-spacing:.3px}
+nav a:hover{color:var(--text)}nav a.on{color:var(--gold);box-shadow:inset 0 -2px 0 var(--gold)}
+.pg{display:none;padding:0 0 30px}.pg.on{display:block;animation:in .5s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.hero{position:relative;padding:76px 0 64px;overflow:hidden;background:radial-gradient(900px 400px at 85% 0,color-mix(in srgb,var(--gold) 14%,transparent),transparent 70%)}
+.hero svg{position:absolute;right:-40px;bottom:0;width:min(560px,90%);opacity:.5;pointer-events:none}
+.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0}
+h1{font-size:clamp(34px,7vw,64px);margin:16px 0;max-width:760px;position:relative}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--gold),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(26px,4.5vw,38px);margin-bottom:10px}
+.lead{color:var(--muted);font-size:18px;max-width:580px;position:relative}
+.sub{color:var(--muted);max-width:620px;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 0;position:relative}
+.btn{padding:14px 28px;border-radius:4px;font-weight:600;text-decoration:none;font-size:14px;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--gold);cursor:pointer;font-family:var(--sans);background:none;color:var(--gold);transition:.25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:linear-gradient(100deg,var(--gold),var(--gold2));color:var(--on);border-color:transparent}
+.sec{padding:60px 0}.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.full{margin:0 -22px;padding-left:22px;padding-right:22px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border-block:1px solid var(--line)}
+.stat{padding:28px 16px;text-align:center;border-right:1px solid var(--line)}.stat:last-child{border:0}
+.stat b{display:block;font-family:var(--serif);font-size:38px;color:var(--gold)}.stat span{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:28px;transition:.3s}
+.card:hover{border-color:var(--gold);box-shadow:var(--shadow);transform:translateY(-3px)}
+.card h3{font-size:21px;margin:10px 0 8px}.card p{margin:0;color:var(--muted);font-size:15px}
+.ico{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--serif);font-size:18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;counter-reset:s}
+.step{padding:26px 24px 10px 0;border-top:1px solid var(--gold);position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:34px;color:var(--gold);display:block;margin-bottom:6px}
+.step h3{font-size:19px;margin-bottom:6px}.step p{margin:0;color:var(--muted);font-size:15px}
+.cta{text-align:center;padding:60px 22px;border:1px solid var(--gold);border-radius:12px;background:radial-gradient(500px 200px at 50% 0,color-mix(in srgb,var(--gold) 16%,transparent),transparent 70%)}
+.cta .btns{justify-content:center}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{border:1px solid var(--line);background:none;color:var(--muted);padding:8px 16px;border-radius:99px;cursor:pointer;font-size:13px;font-family:inherit}
+.chip.on{border-color:var(--gold);color:var(--gold)}
+.bad{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.prog{height:4px;background:var(--line);margin:16px 0 8px}.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+label{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+input,select,textarea{width:100%;padding:13px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--text);font:inherit}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+.res{border:1px solid var(--gold);border-radius:8px;padding:18px;margin-top:18px}.res b{font-family:var(--serif);font-size:28px;color:var(--gold)}
+details{border-bottom:1px solid var(--line);padding:18px 0}summary{cursor:pointer;font-family:var(--serif);font-size:18px}details p{color:var(--muted);margin:10px 0 0}
+.note{font-size:12.5px;color:var(--muted);margin-top:14px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;align-items:start}
+.top{padding:56px 0 24px}
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:44px 0 24px;margin-top:20px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}@media(max-width:640px){.fg{grid-template-columns:1fr}}
+footer h4{font-family:var(--serif);margin:0 0 10px;color:var(--gold);font-weight:600}
+footer a{display:block;color:var(--muted);text-decoration:none;font-size:14px;margin:5px 0}
+.copy{border-top:1px solid var(--line);margin-top:28px;padding-top:16px;font-size:12px;color:var(--muted)}
+.modal{position:fixed;inset:0;background:rgba(3,6,14,.72);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px}.modal[hidden]{display:none}
+.mbox{position:relative;background:var(--surface);border:1px solid var(--gold);border-radius:12px;padding:30px;width:100%;max-width:420px;max-height:90vh;overflow:auto}
+.x{position:absolute;right:12px;top:6px;background:none;border:0;color:var(--muted);font-size:28px;cursor:pointer}
+.tabs{display:flex;gap:6px;margin-bottom:14px}.err{color:#e5736b;font-size:13px;min-height:18px;margin-top:10px}
+.sm{padding:8px 16px;font-size:12px}.who{font-size:13px;color:var(--muted)}#auth{display:flex;gap:10px;align-items:center}
+.soc{display:flex;gap:10px;margin:14px 0 8px}.soc button{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit;font-size:14px;cursor:pointer;transition:.2s}.soc button:hover{border-color:var(--gold)}.soc svg{width:18px;height:18px;flex:none}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.role{border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:8px;padding:12px;text-align:left;cursor:pointer;font:inherit;font-size:14px;font-weight:600}.role small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}.role.on{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.meter{height:4px;background:var(--line);border-radius:4px;margin:8px 0 4px;overflow:hidden}.meter i{display:block;height:100%;width:0;background:#e5736b;transition:.3s}
+label.chk{display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-size:13px;color:var(--text)}label.chk input{width:auto;margin-top:3px}
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0 16px}.tbl th,.tbl td{padding:8px;border-bottom:1px solid var(--line);text-align:left}.tbl th{color:var(--muted);font-weight:500}
+.lnk{background:none;border:0;color:var(--gold);font:inherit;font-size:14px;cursor:pointer;padding:6px 0;text-decoration:underline}
+.or{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;margin:12px 0 2px}.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.tab{display:none;position:fixed;left:0;right:0;bottom:0;z-index:25;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));justify-content:space-around}
+.tab a{display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted);text-decoration:none;font-size:11px;letter-spacing:.3px;padding:4px 12px;position:relative;transition:.25s}
+.tab a svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:.25s}
+.tab a.on{color:var(--gold)}.tab a.on svg{transform:translateY(-3px) scale(1.12)}
+.tab a.on::after{content:"";position:absolute;bottom:-4px;width:18px;height:3px;border-radius:3px;background:var(--gold)}
+.sv{display:block;text-decoration:none;color:inherit}
+@media(max-width:760px){.tab{display:flex}#nav{display:none}body{padding-bottom:84px}}
+.hero>.wrap>svg{display:none}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.4;-webkit-mask-image:radial-gradient(ellipse at 75% 30%,#000,transparent 70%);mask-image:radial-gradient(ellipse at 75% 30%,#000,transparent 70%)}
+.hero>.wrap{position:relative;display:flex;flex-direction:column;align-items:flex-start}
+.vis{position:absolute;right:22px;top:6px;width:340px}
+.glass{background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.vh{display:flex;justify-content:space-between;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}.vh i{font-style:normal;color:var(--gold)}
+.big{display:block;font-family:var(--serif);font-size:38px;color:var(--gold);margin:6px 0 2px}
+.vis svg{width:100%;display:block}.ln{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2s .4s forwards}.area{opacity:0;animation:fade 1s 1.2s forwards}
+.bars{display:flex;gap:6px;align-items:flex-end;height:50px;margin-top:10px}.bars i{flex:1;height:var(--h);background:linear-gradient(var(--gold2),var(--gold));border-radius:3px 3px 0 0;transform-origin:bottom;animation:grow .8s backwards}.bars i:nth-child(2){animation-delay:.1s}.bars i:nth-child(3){animation-delay:.2s}.bars i:nth-child(4){animation-delay:.3s}.bars i:nth-child(5){animation-delay:.4s}.bars i:nth-child(6){animation-delay:.5s}
+.c1,.c2{position:absolute;background:var(--surface);border:1px solid var(--gold);border-radius:99px;padding:8px 14px;font-size:12px;box-shadow:var(--shadow);animation:float 4s ease-in-out infinite;white-space:nowrap}.c1{top:-18px;left:-34px}.c2{bottom:-16px;right:-8px;animation-delay:1.2s}
+@media(min-width:900px){.hero h1{max-width:540px}.hero .lead{max-width:500px}}
+@media(max-width:900px){.vis{position:relative;right:auto;top:auto;width:100%;max-width:360px;margin-top:40px;order:5}.c1{left:-6px}}
+.rv{opacity:0}.rv.in{opacity:1;animation:up .7s backwards}.grid>.rv:nth-child(2).in{animation-delay:.1s}.grid>.rv:nth-child(3).in{animation-delay:.2s}.grid>.rv:nth-child(4).in{animation-delay:.3s}
+.q p{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--text);margin-bottom:14px}.q b{font-size:13px;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fade{to{opacity:1}}@keyframes grow{from{transform:scaleY(0)}}@keyframes float{50%{transform:translateY(-8px)}}@keyframes up{from{opacity:0;transform:translateY(24px)}}
+.demo{background:linear-gradient(100deg,var(--gold),var(--gold2));color:var(--on);text-align:center;font-size:12.5px;font-weight:600;padding:6px 12px;letter-spacing:.3px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}.seg button{background:none;border:0;color:var(--muted);font:600 12px var(--sans);padding:8px 11px;cursor:pointer}.seg button.on{background:var(--gold);color:var(--on)}
+.tg{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--gold);font-size:16px;cursor:pointer}.tg:hover,.seg button:hover{border-color:var(--gold)}
+#auth{flex-wrap:wrap}@media(max-width:760px){#up{display:none}}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1}.ln{stroke-dashoffset:0}.area{opacity:1}}
+</style>
+<script>
+const D={"Bosh sahifa": "Главная", "Kompaniya": "Компания", "Investorlar": "Инвесторам", "Loyihalar": "Проекты", "Loyiha topshirish": "Подать проект", "Aloqa": "Контакты", "Portfel o'sishi": "Рост портфеля", "namunaviy": "пример", "✓ Loyiha tasdiqlandi": "✓ Проект одобрен", "+ Yangi investor": "+ Новый инвестор", "Investitsiya kompaniyasi": "Инвестиционная компания", "IFMU investorlar mablag'ini sinchiklab tanlangan, real daromad keltira oladigan loyihalarga yo'naltiradi.": "IFMU направляет средства инвесторов в тщательно отобранные проекты, способные приносить реальный доход.", "Investor bo'ling": "Стать инвестором", "bosqichli tanlov": "этапа отбора", "shartnoma asosida": "по договору", "ochiq hisobotlar": "открытая отчётность", "tomon uchun foyda": "выгода для обеих сторон", "Jarayon": "Процесс", "Qanday ishlaymiz": "Как мы работаем", "Har bir loyiha ariza bosqichidan hisobotgacha aniq tartibdan o'tadi.": "Каждый проект проходит чёткий путь — от заявки до отчёта.", "Ariza": "Заявка", "Loyiha egasi biznes-reja va hisob-kitoblarni taqdim etadi.": "Владелец проекта представляет бизнес-план и расчёты.", "Tahlil": "Анализ", "Mutaxassislar bozor, xarajat va foydani chuqur tekshiradi.": "Эксперты глубоко проверяют рынок, затраты и прибыль.", "Moliyalashtirish": "Финансирование", "Tasdiqlangan loyihaga investor mablag'i yo'naltiriladi.": "Средства инвесторов направляются в одобренный проект.", "Hisobot": "Отчёт", "Natijalar va daromad taqsimoti ochiq e'lon qilinadi.": "Результаты и распределение дохода публикуются открыто.", "Afzalliklar": "Преимущества", "Nega IFMU": "Почему IFMU", "Qat'iy tanlov": "Строгий отбор", "Faqat real daromad keltirishi mumkin bo'lgan loyihalar qabul qilinadi.": "Принимаются только проекты, способные приносить реальный доход.", "Shaffoflik": "Прозрачность", "Har bir bitim rasmiy shartnoma va ochiq hisobot bilan yuritiladi.": "Каждая сделка оформляется официальным договором и открытым отчётом.", "Uzoq muddatli hamkorlik": "Долгосрочное партнёрство", "Investor ham, loyiha egasi ham bizdan doimiy qo'llab-quvvatlash oladi.": "И инвестор, и владелец проекта получают от нас постоянную поддержку.", "Yo'nalishlar": "Направления", "Qaysi sohalarga mablag' yo'naltiramiz": "В какие отрасли мы направляем средства", "Qishloq xo'jaligi": "Сельское хозяйство", "Issiqxona, chorvachilik va qayta ishlash loyihalari.": "Теплицы, животноводство и проекты переработки.", "Ishlab chiqarish": "Производство", "Sex, uskuna va import o'rnini bosuvchi mahsulotlar.": "Цеха, оборудование и импортозамещающая продукция.", "Xizmat ko'rsatish": "Услуги", "Logistika, savdo va turizm yo'nalishlari.": "Логистика, торговля и туризм.", "Texnologiya": "Технологии", "Dasturiy mahsulotlar va raqamli xizmatlar.": "Программные продукты и цифровые сервисы.", "Fikrlar": "Отзывы", "Hamkorlarimiz nima deydi": "Что говорят наши партнёры", "Namunaviy matnlar — haqiqiy fikrlar bilan almashtiriladi.": "Примерные тексты — будут заменены реальными отзывами.", "“Shartnoma va hisobotlar tushunarli, har qadamni kuzatib bordim.”": "«Договор и отчёты понятны, я следил за каждым шагом.»", "“Loyiham puxta tahlildan o'tdi va tez moliyalashtirildi.”": "«Мой проект прошёл тщательный анализ и быстро получил финансирование.»", "“Ochiq muloqot va aniq shartlar — aynan shu kerak edi.”": "«Открытый диалог и чёткие условия — именно то, что было нужно.»", "Investor": "Инвестор", "Loyiha egasi": "Владелец проекта", "Hamkor": "Партнёр", "Birgalikda o'sishni boshlaymiz": "Начнём расти вместе", "Investitsiya qilmoqchimisiz yoki loyihangiz bormi? Mutaxassislarimiz sizga yordam beradi.": "Хотите инвестировать или у вас есть проект? Наши специалисты помогут.", "Bog'lanish": "Связаться", "Biz haqimizda": "О нас", "IFMU — investitsiya qabul qilib, uni real foyda keltiradigan loyihalarga yo'naltiradigan kompaniya.": "IFMU — компания, которая принимает инвестиции и направляет их в проекты, приносящие реальную прибыль.", "Missiya": "Миссия", "Kapital va yaxshi g'oyalarni ishonchli, shaffof tarzda bog'lash.": "Надёжно и прозрачно соединять капитал и хорошие идеи.", "Tanlov mezoni": "Критерий отбора", "Loyiha real bozor talabiga va hisoblangan foydaga tayanishi shart.": "Проект должен опираться на реальный рыночный спрос и рассчитанную прибыль.", "Qadriyatlar": "Ценности", "Halollik, mas'uliyat, shaffoflik va uzoq muddatli hamkorlik.": "Честность, ответственность, прозрачность и долгосрочное партнёрство.", "Investorlar uchun": "Для инвесторов", "Mablag'ingiz ishonchli qo'llarda": "Ваши средства в надёжных руках", "Tekshirilgan loyihalarga investitsiya qiling va natijalarni ochiq kuzating.": "Инвестируйте в проверенные проекты и открыто следите за результатами.", "Taxminiy hisoblagich": "Примерный калькулятор", "Summa (so'm)": "Сумма (сум)", "Taxminiy yillik daromad (%)": "Ожидаемая годовая доходность (%)", "Muddat (oy)": "Срок (мес.)", "Investitsiya qilish": "Инвестировать", "Namunaviy hisob. Haqiqiy daromad loyiha natijasiga bog'liq va kafolatlanmaydi.": "Примерный расчёт. Реальный доход зависит от результатов проекта и не гарантируется.", "Ko'p so'raladigan savollar": "Частые вопросы", "Minimal investitsiya summasi qancha?": "Какова минимальная сумма инвестиции?", "Har loyiha uchun alohida belgilanadi va loyiha sahifasida ko'rsatiladi.": "Определяется отдельно для каждого проекта и указывается на странице проекта.", "Daromad kafolatlanadimi?": "Гарантируется ли доход?", "Yo'q. Har qanday investitsiya xavf bilan bog'liq, xavflarni ochiq ko'rsatamiz.": "Нет. Любая инвестиция связана с риском, и мы открыто указываем риски.", "Mablag'ni qachon qaytarib olaman?": "Когда я смогу вернуть средства?", "Muddat shartnomada loyiha rejasiga mos ravishda belgilanadi.": "Срок определяется в договоре в соответствии с планом проекта.", "Portfel": "Портфель", "Moliyalashtirish uchun tasdiqlangan loyihalar.": "Одобренные проекты для финансирования.", "Loyiha egalari uchun": "Для владельцев проектов", "Loyihangiz real foyda keltirsa, moliyalashtirishni ko'rib chiqamiz.": "Если ваш проект приносит реальную прибыль, мы рассмотрим финансирование.", "Ismingiz": "Ваше имя", "Loyiha nomi": "Название проекта", "Soha": "Отрасль", "Kerakli summa (so'm)": "Необходимая сумма (сум)", "Loyiha va kutilgan foyda": "Проект и ожидаемая прибыль", "Fayllar (biznes-reja, hujjatlar; ko'pi bilan 5 ta, 10 MB gacha)": "Файлы (бизнес-план, документы; до 5 шт., до 10 МБ)", "Yuborish": "Отправить", "Demo: loyiha qabul qilish tez orada kompaniya tomonidan boshlanadi.": "Демо: приём проектов скоро начнёт компания.", "Biz bilan bog'laning": "Свяжитесь с нами", "Telefon": "Телефон", "Manzil": "Адрес", "Manzil keyinroq qo'shiladi": "Адрес будет добавлен позже", "Xizmatlar": "Услуги", "Bizning xizmatlar": "Наши услуги", "Kerakli bo'limni tanlang.": "Выберите нужный раздел.", "Mablag'ingizni tekshirilgan loyihalarga joylang.": "Разместите средства в проверенных проектах.", "Loyihangiz uchun moliyalashtirish so'rang.": "Запросите финансирование для вашего проекта.", "Kompaniya haqida": "О компании", "Missiya, tanlov mezoni va qadriyatlarimiz.": "Миссия, критерии отбора и наши ценности.", "Savollaringiz bo'lsa, biz bilan bog'laning.": "Если есть вопросы — свяжитесь с нами.", "Profil": "Профиль", "Mening profilim": "Мой профиль", "Kapital va g'oyani real foydaga aylantiruvchi investitsiya kompaniyasi.": "Инвестиционная компания, превращающая капитал и идеи в реальную прибыль.", "Sahifalar": "Страницы", "© 2026 IFMU. Barcha huquqlar himoyalangan. Investitsiya xavf bilan bog'liq, daromad kafolatlanmaydi.": "© 2026 IFMU. Все права защищены. Инвестиции связаны с риском, доход не гарантируется.", "Bosh menyu": "Главное", "Hammasi": "Все", "so'm": "сум", "Muddat": "Срок", "oy": "мес.", "Hozircha faol loyihalar yo'q.": "Пока нет активных проектов.", "Taxminiy daromad": "Ожидаемый доход", "Jami": "Итого", "Issiqxona majmuasi": "Тепличный комплекс", "Mebel ishlab chiqarish sexi": "Цех по производству мебели", "Logistika xizmati": "Логистическая служба", "Onlayn ta'lim ilovasi": "Приложение для онлайн-обучения", "DEMO versiya — bo'lajak kompaniya uchun namoyish": "ДЕМО-версия — презентация для будущей компании", "Demo versiya": "Демо-версия", "Hisob va profil hozircha mavjud emas.": "Аккаунт и профиль пока недоступны.", "Kirish": "Войти", "Ro'yxatdan o'tish": "Регистрация", "Kirish va ro'yxatdan o'tish hozircha mavjud emas. Bu sayt faqat demo — bo'lajak kompaniya uchun namuna sifatida tayyorlangan.": "Вход и регистрация пока недоступны. Этот сайт — только демо, подготовленный как образец для будущей компании.", "Tez orada": "Скоро", "Investitsiya kiritish tez orada kompaniya tomonidan boshlanadi. Hozircha sayt faqat demo rejimida.": "Приём инвестиций скоро начнёт компания. Пока сайт работает только в демо-режиме.", "Loyiha yuborish ham tez orada kompaniya tomonidan boshlanadi. Hozircha sayt faqat demo rejimida.": "Приём проектов тоже скоро начнёт компания. Пока сайт работает только в демо-режиме.", "Tushunarli": "Понятно"};
+let lang="uz";const _n=s=>String(s).replace(/\s+/g," ").trim().replace(/[\u2019\u2018\u02bb]/g,"'");
+const t=s=>lang==="ru"&&D[_n(s)]||s;
+</script>
+</head>
+<body>
+<div class="demo"><span>DEMO versiya — bo'lajak kompaniya uchun namoyish</span></div>
+<header><div class="wrap bar">
+<a class="logo" href="#bosh"><span class="mark" id="logo">I</span><b>IFMU</b></a>
+<nav id="nav"><a href="#bosh">Bosh sahifa</a><a href="#haqida">Kompaniya</a><a href="#investor">Investorlar</a><a href="#loyihalar">Loyihalar</a><a href="#topshirish">Loyiha topshirish</a><a href="#aloqa">Aloqa</a></nav><div id="auth"><span class="seg"><button data-l="uz" aria-label="O'zbekcha">UZ</button><button data-l="ru" aria-label="Русский">RU</button></span><button class="tg" id="th" aria-label="Qorong'u / yorug' rejim"></button><button class="btn sm" id="in">Kirish</button><button class="btn p sm" id="up">Ro'yxatdan o'tish</button></div>
+</div></header>
+<main>
+
+<section class="pg" id="p-bosh">
+<div class="hero"><div class="wrap">
+<svg viewBox="0 0 560 300" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M0 280 L90 220 L170 240 L260 150 L340 170 L430 80 L560 30"/><path d="M0 295 L90 245 L170 262 L260 185 L340 200 L430 120 L560 70" opacity=".4"/><circle cx="430" cy="80" r="5" fill="var(--gold)"/><circle cx="260" cy="150" r="4" fill="var(--gold)"/></svg>
+<div class="vis"><div class="glass"><div class="vh"><span>Portfel o’sishi</span><i>namunaviy</i></div><b class="big">+24.8%</b><svg viewBox="0 0 300 110"><defs><linearGradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9a24b" stop-opacity=".45"/><stop offset="1" stop-color="#c9a24b" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 95L40 80 80 86 120 55 160 62 210 30 260 38 300 8V110H0Z" fill="url(#ga)"/><path class="ln" pathLength="1" d="M0 95L40 80 80 86 120 55 160 62 210 30 260 38 300 8" fill="none" stroke="#c9a24b" stroke-width="2.5" stroke-linecap="round"/></svg><div class="bars"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:45%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:92%"></i></div></div><div class="c1">✓ Loyiha tasdiqlandi</div><div class="c2">+ Yangi investor</div></div>
+<span class="eyebrow">Investitsiya kompaniyasi</span>
+<h1 id="h1">Kapital va g‘oyani <em>real foydaga</em> aylantiramiz</h1>
+<p class="lead">IFMU investorlar mablag‘ini sinchiklab tanlangan, real daromad keltira oladigan loyihalarga yo’naltiradi.</p>
+<div class="btns"><a class="btn p" href="#investor">Investor bo’ling</a><a class="btn" href="#topshirish">Loyiha topshirish</a></div>
+</div></div>
+<div class="wrap">
+<div class="stats"><div class="stat"><b data-n="4">0</b><span>bosqichli tanlov</span></div><div class="stat"><b data-n="100" data-s="%">0%</b><span>shartnoma asosida</span></div><div class="stat"><b>24/7</b><span>ochiq hisobotlar</span></div><div class="stat"><b data-n="2">0</b><span>tomon uchun foyda</span></div></div>
+<div class="sec"><span class="eyebrow">Jarayon</span><h2>Qanday ishlaymiz</h2><p class="sub">Har bir loyiha ariza bosqichidan hisobotgacha aniq tartibdan o’tadi.</p>
+<div class="steps"><div class="step"><h3>Ariza</h3><p>Loyiha egasi biznes-reja va hisob-kitoblarni taqdim etadi.</p></div><div class="step"><h3>Tahlil</h3><p>Mutaxassislar bozor, xarajat va foydani chuqur tekshiradi.</p></div><div class="step"><h3>Moliyalashtirish</h3><p>Tasdiqlangan loyihaga investor mablag‘i yo’naltiriladi.</p></div><div class="step"><h3>Hisobot</h3><p>Natijalar va daromad taqsimoti ochiq e’lon qilinadi.</p></div></div></div>
+</div>
+<div class="alt"><div class="wrap sec"><span class="eyebrow">Afzalliklar</span><h2>Nega IFMU</h2><br>
+<div class="grid"><div class="card"><div class="ico">◆</div><h3>Qat’iy tanlov</h3><p>Faqat real daromad keltirishi mumkin bo’lgan loyihalar qabul qilinadi.</p></div><div class="card"><div class="ico">◈</div><h3>Shaffoflik</h3><p>Har bir bitim rasmiy shartnoma va ochiq hisobot bilan yuritiladi.</p></div><div class="card"><div class="ico">◇</div><h3>Uzoq muddatli hamkorlik</h3><p>Investor ham, loyiha egasi ham bizdan doimiy qo’llab-quvvatlash oladi.</p></div></div></div></div>
+<div class="wrap sec"><span class="eyebrow">Yo’nalishlar</span><h2>Qaysi sohalarga mablag‘ yo’naltiramiz</h2><br><div class="grid"><div class="card"><div class="ico">01</div><h3>Qishloq xo’jaligi</h3><p>Issiqxona, chorvachilik va qayta ishlash loyihalari.</p></div><div class="card"><div class="ico">02</div><h3>Ishlab chiqarish</h3><p>Sex, uskuna va import o’rnini bosuvchi mahsulotlar.</p></div><div class="card"><div class="ico">03</div><h3>Xizmat ko’rsatish</h3><p>Logistika, savdo va turizm yo’nalishlari.</p></div><div class="card"><div class="ico">04</div><h3>Texnologiya</h3><p>Dasturiy mahsulotlar va raqamli xizmatlar.</p></div></div></div>
+<div class="alt"><div class="wrap sec"><span class="eyebrow">Fikrlar</span><h2>Hamkorlarimiz nima deydi</h2><p class="note">Namunaviy matnlar — haqiqiy fikrlar bilan almashtiriladi.</p><br><div class="grid"><div class="card q"><p>“Shartnoma va hisobotlar tushunarli, har qadamni kuzatib bordim.”</p><b>Investor</b></div><div class="card q"><p>“Loyiham puxta tahlildan o’tdi va tez moliyalashtirildi.”</p><b>Loyiha egasi</b></div><div class="card q"><p>“Ochiq muloqot va aniq shartlar — aynan shu kerak edi.”</p><b>Hamkor</b></div></div></div></div>
+<div class="wrap sec"><div class="cta"><h2>Birgalikda o’sishni boshlaymiz</h2><p class="sub" style="margin:10px auto">Investitsiya qilmoqchimisiz yoki loyihangiz bormi? Mutaxassislarimiz sizga yordam beradi.</p><div class="btns"><a class="btn p" href="#aloqa">Bog’lanish</a></div></div></div>
+</section>
+
+<section class="pg" id="p-haqida"><div class="wrap">
+<div class="top"><span class="eyebrow">Kompaniya</span><h1 style="font-size:clamp(30px,5vw,48px)">Biz haqimizda</h1><p class="lead">IFMU — investitsiya qabul qilib, uni real foyda keltiradigan loyihalarga yo’naltiradigan kompaniya.</p></div>
+<div class="grid"><div class="card"><div class="ico">I</div><h3>Missiya</h3><p>Kapital va yaxshi g‘oyalarni ishonchli, shaffof tarzda bog’lash.</p></div><div class="card"><div class="ico">II</div><h3>Tanlov mezoni</h3><p>Loyiha real bozor talabiga va hisoblangan foydaga tayanishi shart.</p></div><div class="card"><div class="ico">III</div><h3>Qadriyatlar</h3><p>Halollik, mas’uliyat, shaffoflik va uzoq muddatli hamkorlik.</p></div></div>
+</div></section>
+
+<section class="pg" id="p-investor"><div class="wrap">
+<div class="top"><span class="eyebrow">Investorlar uchun</span><h1 style="font-size:clamp(30px,5vw,48px)">Mablag‘ingiz ishonchli qo’llarda</h1><p class="lead">Tekshirilgan loyihalarga investitsiya qiling va natijalarni ochiq kuzating.</p></div>
+<div class="card" id="igate" style="max-width:600px;display:none"></div><div class="two" id="itwo"><div class="card"><h3>Taxminiy hisoblagich</h3>
+<label>Summa (so’m)</label><input id="c-sum" type="number" value="50000000" min="0">
+<label>Taxminiy yillik daromad (%)</label><input id="c-pct" type="number" value="20" min="0">
+<label>Muddat (oy)</label><input id="c-mon" type="number" value="12" min="1">
+<div class="res" id="c-res"></div><div class="btns"><button class="btn p" data-invest="Umumiy investitsiya">Investitsiya qilish</button></div><p class="note">Namunaviy hisob. Haqiqiy daromad loyiha natijasiga bog’liq va kafolatlanmaydi.</p></div>
+<div><h2 style="font-size:28px">Ko’p so’raladigan savollar</h2><br>
+<details><summary>Minimal investitsiya summasi qancha?</summary><p>Har loyiha uchun alohida belgilanadi va loyiha sahifasida ko’rsatiladi.</p></details>
+<details><summary>Daromad kafolatlanadimi?</summary><p>Yo’q. Har qanday investitsiya xavf bilan bog’liq, xavflarni ochiq ko’rsatamiz.</p></details>
+<details><summary>Mablag‘ni qachon qaytarib olaman?</summary><p>Muddat shartnomada loyiha rejasiga mos ravishda belgilanadi.</p></details></div></div>
+</div></section>
+
+<section class="pg" id="p-loyihalar"><div class="wrap">
+<div class="top"><span class="eyebrow">Portfel</span><h1 style="font-size:clamp(30px,5vw,48px)">Loyihalar</h1><p class="sub">Moliyalashtirish uchun tasdiqlangan loyihalar.</p></div>
+<div class="chips" id="chips"></div><div class="grid" id="plist"></div>
+</div></section>
+
+<section class="pg" id="p-topshirish"><div class="wrap">
+<div class="top"><span class="eyebrow">Loyiha egalari uchun</span><h1 style="font-size:clamp(30px,5vw,48px)">Loyiha topshirish</h1><p class="sub">Loyihangiz real foyda keltirsa, moliyalashtirishni ko’rib chiqamiz.</p></div>
+<div class="card" id="gate" style="max-width:600px;display:none"></div><div class="card" id="form" style="max-width:600px">
+<label>Ismingiz</label><input id="f-name"><label>Loyiha nomi</label><input id="f-proj">
+<label>Soha</label><select id="f-cat"><option>Qishloq xo’jaligi</option><option>Ishlab chiqarish</option><option>Xizmat ko’rsatish</option><option>Texnologiya</option></select>
+<label>Kerakli summa (so’m)</label><input id="f-sum" type="number">
+<label>Loyiha va kutilgan foyda</label><textarea id="f-txt" rows="4"></textarea>
+<label>Fayllar (biznes-reja, hujjatlar; ko’pi bilan 5 ta, 10 MB gacha)</label><input type="file" id="f-files" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.png,.jpg,.jpeg"><div class="btns"><button class="btn p" id="f-send">Yuborish</button></div><p class="note">Demo: loyiha qabul qilish tez orada kompaniya tomonidan boshlanadi.</p></div>
+</div></section>
+
+<section class="pg" id="p-aloqa"><div class="wrap">
+<div class="top"><span class="eyebrow">Aloqa</span><h1 style="font-size:clamp(30px,5vw,48px)">Biz bilan bog’laning</h1></div>
+<div class="grid"><div class="card"><h3>Email</h3><p>ifmuholding@gmail.com</p></div><div class="card"><h3>Telefon</h3><p>+998 91 687 79 71</p></div><div class="card"><h3>Manzil</h3><p>Manzil keyinroq qo’shiladi</p></div></div>
+</div></section>
+<section class="pg" id="p-xizmatlar"><div class="wrap"><div class="top"><span class="eyebrow">Xizmatlar</span><h1 style="font-size:clamp(30px,5vw,48px)">Bizning xizmatlar</h1><p class="sub">Kerakli bo’limni tanlang.</p></div>
+<div class="grid"><a class="card sv" href="#investor"><div class="ico">↗</div><h3>Investitsiya qilish</h3><p>Mablag‘ingizni tekshirilgan loyihalarga joylang.</p></a><a class="card sv" href="#topshirish"><div class="ico">+</div><h3>Loyiha topshirish</h3><p>Loyihangiz uchun moliyalashtirish so’rang.</p></a><a class="card sv" href="#haqida"><div class="ico">i</div><h3>Kompaniya haqida</h3><p>Missiya, tanlov mezoni va qadriyatlarimiz.</p></a><a class="card sv" href="#aloqa"><div class="ico">@</div><h3>Aloqa</h3><p>Savollaringiz bo’lsa, biz bilan bog’laning.</p></a></div></div></section>
+<section class="pg" id="p-profil"><div class="wrap"><div class="top"><span class="eyebrow">Profil</span><h1 style="font-size:clamp(30px,5vw,48px)">Mening profilim</h1></div><div class="card" id="prof" style="max-width:760px"></div></div></section>
+</main>
+<footer><div class="wrap"><div class="fg"><div><div class="logo"><span class="mark">I</span><b>IFMU</b></div><p class="note" style="max-width:320px">Kapital va g‘oyani real foydaga aylantiruvchi investitsiya kompaniyasi.</p></div>
+<div><h4>Sahifalar</h4><a href="#haqida">Kompaniya</a><a href="#investor">Investorlar</a><a href="#loyihalar">Loyihalar</a></div><div><h4>Aloqa</h4><a href="#aloqa">info@ifmu.uz</a><a href="#topshirish">Loyiha topshirish</a></div></div>
+<div class="copy">© 2026 IFMU. Barcha huquqlar himoyalangan. Investitsiya xavf bilan bog’liq, daromad kafolatlanmaydi.</div></div></footer><nav class="tab" id="tab"><a href="#bosh"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Bosh menyu</a><a href="#xizmatlar"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Xizmatlar</a><a href="#loyihalar"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/></svg>Loyihalar</a><a href="#profil"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Profil</a></nav>
+<script>
+let P=[{n:`Issiqxona majmuasi`,c:`Qishloq xo’jaligi`,g:300,r:180,m:18},{n:`Mebel ishlab chiqarish sexi`,c:`Ishlab chiqarish`,g:500,r:320,m:24},{n:`Logistika xizmati`,c:`Xizmat ko’rsatish`,g:250,r:90,m:12},{n:`Onlayn ta’lim ilovasi`,c:`Texnologiya`,g:400,r:150,m:20}];
+P=P.map(p=>({...p,g:p.g*1e6,r:p.r*1e6}));
+const pages=[`bosh`,`xizmatlar`,`profil`,`haqida`,`investor`,`loyihalar`,`topshirish`,`aloqa`];
+function route(){let h=(location.hash||`#bosh`).slice(1);if(!pages.includes(h))h=`bosh`;
+document.querySelectorAll(`.pg`).forEach(e=>e.classList.toggle(`on`,e.id===`p-`+h));
+document.querySelectorAll(`#nav a`).forEach(a=>a.classList.toggle(`on`,a.getAttribute(`href`)===`#`+h));const t=[`haqida`,`investor`,`topshirish`,`aloqa`].includes(h)?`xizmatlar`:h;document.querySelectorAll(`#tab a`).forEach(a=>a.classList.toggle(`on`,a.getAttribute(`href`)===`#`+t));window.scrollTo(0,0)}
+addEventListener(`hashchange`,route);route();
+let cat=`Hammasi`;
+const E=s=>String(s==null?``:s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const M=n=>Number(n||0).toLocaleString(`ru-RU`);
+function draw(){const cs=[`Hammasi`,...new Set(P.map(p=>p.c))];
+document.getElementById(`chips`).innerHTML=cs.map(c=>`<button class="chip${c===cat?` on`:``}" data-c="${E(c)}">${E(t(c))}</button>`).join(``);
+const L=P.filter(p=>cat===`Hammasi`||p.c===cat);
+document.getElementById(`plist`).innerHTML=L.length?L.map(p=>{const pc=p.g?Math.min(100,Math.round(p.r/p.g*100)):0;
+return `<div class="card"><span class="bad">${E(t(p.c))}</span><h3>${E(t(p.n))}</h3>${p.d?`<p>${E(p.d)}</p>`:``}<div class="prog"><i style="width:${pc}%"></i></div><div class="meta"><span>${M(p.r)} / ${M(p.g)} ${t("so'm")}</span><span>${pc}%</span></div><p style="margin-top:10px">${t("Muddat")}: ${E(p.m)} ${t("oy")}</p><div class="btns" style="margin-top:14px"><button class="btn" data-invest="${E(p.n)}" data-pid="${E(p.id||``)}">${t("Investitsiya qilish")}</button></div></div>`}).join(``):`<p class="sub">${t("Hozircha faol loyihalar yo'q.")}</p>`;
+document.querySelectorAll(`.chip`).forEach(b=>b.onclick=()=>{cat=b.dataset.c;draw()})}
+draw();
+function calc(){const s=+document.getElementById(`c-sum`).value||0,p=+document.getElementById(`c-pct`).value||0,m=+document.getElementById(`c-mon`).value||1;
+const g=s*p/100*m/12,f=n=>Math.round(n).toLocaleString(`ru-RU`);
+document.getElementById(`c-res`).innerHTML=`${t("Taxminiy daromad")}<br><b>${f(g)}</b> ${t("so'm")}<br><span class="note">${t("Jami")}: ${f(s+g)} ${t("so'm")}</span>`}
+[`c-sum`,`c-pct`,`c-mon`].forEach(i=>document.getElementById(i).oninput=calc);calc();
+</script>
+<div class="modal" id="m" hidden><div class="mbox"><button class="x" id="mx" aria-label="Yopish">×</button><div id="mc"></div></div></div>
+<script>
+const $=id=>document.getElementById(id);
+const SKIP=`#plist,#chips,#c-res`;
+function tr(root){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;const L=[];while(n=w.nextNode())L.push(n);
+L.forEach(n=>{const p=n.parentElement;if(!p||/^(SCRIPT|STYLE)$/.test(p.tagName)||p.closest(SKIP))return;
+if(n.__o===undefined){if(!n.nodeValue.trim())return;n.__o=n.nodeValue}
+const k=_n(n.__o),r=lang==="ru"&&D[k];const a=n.__o.match(/^\s*/)[0],b=n.__o.match(/\s*$/)[0];n.nodeValue=r?a+r+b:n.__o})}
+const H1={uz:$(`h1`).innerHTML,ru:`Превращаем капитал и идеи в <em>реальную прибыль</em>`};
+function setLang(l){lang=l;document.documentElement.lang=l;tr(document.body);$(`h1`).innerHTML=H1[l];draw();calc();
+document.title=l===`ru`?`IFMU — платформа инвестиций и проектов`:`IFMU — Investitsiya va loyihalar platformasi`;
+document.querySelectorAll(`.seg button`).forEach(b=>b.classList.toggle(`on`,b.dataset.l===l));try{localStorage.setItem(`ifmu-lang`,l)}catch(e){}}
+document.querySelectorAll(`.seg button`).forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+function curDark(){const d=document.documentElement.dataset.theme;return d?d===`dark`:!matchMedia(`(prefers-color-scheme:light)`).matches}
+function setTheme(d){document.documentElement.dataset.theme=d?`dark`:`light`;$(`th`).textContent=d?`☀`:`☾`;$(`th`).title=d?`Light`:`Dark`;try{localStorage.setItem(`ifmu-theme`,d?`dark`:`light`)}catch(e){}}
+$(`th`).onclick=()=>setTheme(!curDark());
+function openM(title,body){$(`mc`).innerHTML=`<h3>${title}</h3><p class="note" style="font-size:15px;margin:12px 0 18px">${body}</p><button class="btn p" id="ok" style="width:100%">Tushunarli</button>`;tr($(`mc`));$(`m`).hidden=false;$(`ok`).onclick=closeM;$(`ok`).focus()}
+function closeM(){$(`m`).hidden=true}
+$(`mx`).onclick=closeM;$(`m`).onclick=e=>{if(e.target.id===`m`)closeM()};addEventListener(`keydown`,e=>{if(e.key===`Escape`)closeM()});
+const AUTH=()=>openM(`Demo versiya`,`Kirish va ro'yxatdan o'tish hozircha mavjud emas. Bu sayt faqat demo — bo'lajak kompaniya uchun namuna sifatida tayyorlangan.`);
+$(`in`).onclick=AUTH;$(`up`).onclick=AUTH;
+$(`prof`).innerHTML=`<h3>Demo versiya</h3><p>Hisob va profil hozircha mavjud emas.</p><div class="btns"><button class="btn p" id="pin">Kirish</button></div>`;$(`pin`).onclick=AUTH;
+$(`f-send`).onclick=()=>openM(`Tez orada`,`Loyiha yuborish ham tez orada kompaniya tomonidan boshlanadi. Hozircha sayt faqat demo rejimida.`);
+document.addEventListener(`click`,e=>{if(e.target.closest(`[data-invest]`))openM(`Tez orada`,`Investitsiya kiritish tez orada kompaniya tomonidan boshlanadi. Hozircha sayt faqat demo rejimida.`)});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add(`in`);if(e.target.dataset.n)cnt(e.target);io.unobserve(e.target)}}),{threshold:.15});
+function cnt(el){const T=+el.dataset.n,s=el.dataset.s||``;let st=null;const f=ts=>{st=st||ts;const p=Math.min((ts-st)/1400,1);el.textContent=Math.round(T*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)}
+document.querySelectorAll(`.card,.step,.stat,.cta`).forEach(e=>{e.classList.add(`rv`);io.observe(e)});
+document.querySelectorAll(`.stat b[data-n]`).forEach(b=>io.observe(b));
+let sl=`uz`,st=null;try{sl=localStorage.getItem(`ifmu-lang`)||(/^ru/i.test(navigator.language)?`ru`:`uz`);st=localStorage.getItem(`ifmu-theme`)}catch(e){}
+setTheme(st?st===`dark`:curDark());setLang(sl===`ru`?`ru`:`uz`);
+</script>
+</body></html>
